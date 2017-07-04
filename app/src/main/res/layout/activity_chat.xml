@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.hyphenate.easeui.widget.EaseTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleBarBackground="#0075c2"
+        app:titleBarTitle="对话" />
+
+    <com.hyphenate.easeui.widget.EaseChatMessageList
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.hyphenate.easeui.widget.EaseChatInputMenu
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

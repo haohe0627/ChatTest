@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px526">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px80"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/px90"
+        android:layout_marginRight="@dimen/px90"
+        android:orientation="horizontal"
+        android:background="@drawable/login_account_bg">
+        <ImageView
+            android:layout_width="@dimen/px32"
+            android:layout_height="@dimen/px32"
+            android:layout_marginLeft="@dimen/px30"
+            android:contentDescription="@null"
+            android:scaleType="fitXY" />
+        <View
+            android:layout_width="@dimen/px1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/px25" />
+
+        <com.tc.chattest.customer.ClearEditText
+            android:id="@+id/accountTxt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:paddingLeft="@dimen/px20"
+            android:paddingRight="@dimen/px20"
+            android:textColorHint="#c4c4c4"
+            android:textSize="@dimen/px25"
+            android:inputType="text"
+            android:maxLength="20"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px80"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/px90"
+        android:layout_marginRight="@dimen/px90"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/px5"
+        android:background="@drawable/login_account_bg">
+        <ImageView
+            android:layout_width="@dimen/px32"
+            android:layout_height="@dimen/px32"
+            android:layout_marginLeft="@dimen/px30"
+            android:contentDescription="@null"
+            android:scaleType="fitXY" />
+        <View
+            android:layout_width="@dimen/px1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/px25" />
+
+        <com.tc.chattest.customer.ClearEditText
+            android:id="@+id/accountPwd"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/px20"
+            android:paddingRight="@dimen/px20"
+            android:background="@null"
+            android:textColorHint="#c4c4c4"
+            android:textSize="@dimen/px25"
+            android:inputType="textPassword"
+            android:maxLength="20"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/registBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px80"
+        android:layout_marginLeft="@dimen/px90"
+        android:layout_marginRight="@dimen/px90"
+        android:layout_marginTop="@dimen/px30"
+        android:textColor="#FFF"
+        android:textSize="@dimen/px28"
+        android:text="注册"/>
+
+</LinearLayout>
