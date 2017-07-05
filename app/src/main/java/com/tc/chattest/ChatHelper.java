@@ -1,9 +1,13 @@
 package com.tc.chattest;
 
+import android.util.Log;
+
 import com.hyphenate.EMConnectionListener;
+import com.hyphenate.EMContactListener;
 import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.util.EMLog;
+import com.tc.chattest.utils.SharedPreferenceUtil;
 
 /**
  * Created by haohe on 2017/7/3 0003.
@@ -50,5 +54,38 @@ public class ChatHelper {
 
         //register connection listener
         EMClient.getInstance().addConnectionListener(connectionListener);
+        EMClient.getInstance().contactManager().setContactListener(new MyContactListener());
+    }
+
+    class MyContactListener implements EMContactListener {
+
+        @Override
+        public void onContactAdded(String username) { //好友请求被同意
+            Log.i("contact-info","//////////////////////////////////////////好友请求被同意！！//////////////////////////////////////////////"+username);
+        }
+
+        @Override
+        public void onContactDeleted(String username) { //好友请求被拒绝
+            Log.i("contact-info","//////////////////////////////////////////好友请求被拒绝！！//////////////////////////////////////////////"+username);
+        }
+
+        @Override
+        public void onContactInvited(String username, String reason) { //收到好友邀请
+            Log.i("contact-info","//////////////////////////////////////////收到好友邀请！！//////////////////////////////////////////////"+username);
+            String names = (String) SharedPreferenceUtil.get("invate_names", "");
+            names += username+";";
+            SharedPreferenceUtil.set("invate_names", names);
+        }
+
+        @Override
+        public void onFriendRequestAccepted(String username) { //被删除时回调此方法
+
+        }
+
+        @Override
+        public void onFriendRequestDeclined(String username) { //增加了联系人时回调此方法
+
+        }
+
     }
 }

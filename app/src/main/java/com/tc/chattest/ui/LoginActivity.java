@@ -12,6 +12,7 @@ import com.hyphenate.chat.EMClient;
 import com.tc.chattest.R;
 import com.tc.chattest.base.BaseActivity;
 import com.tc.chattest.customer.ClearEditText;
+import com.tc.chattest.utils.SharedPreferenceUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,8 +66,9 @@ public class LoginActivity extends BaseActivity {
                             public void onSuccess() {
                                 EMClient.getInstance().groupManager().loadAllGroups();
                                 EMClient.getInstance().chatManager().loadAllConversations();
-                                Log.d("main", "登录聊天服务器成功！");
+                                Log.d("main", accountTxt.getText().toString()+"登录聊天服务器成功！");
 
+                                SharedPreferenceUtil.SP_NAME = accountTxt.getText().toString();
                                 redictTo(MainActivity.class);
                                 finish();
                             }

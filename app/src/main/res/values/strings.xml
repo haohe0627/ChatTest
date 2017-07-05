@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ChatTest</string>
+    <string name="refuse">Refuse</string>
+    <string name="not_download">Did not download:</string>
+    <string name="Please_enter_a_username">Please enter a username</string>
+    <string name="is_down_please_wait">Downloading video, please wait a moment</string>
+    <string name="Exit_the_group_chat">Exit the group</string>
+    <string name="accept_join_group">accept join group:</string>
+    <string name="refuse_join_group">refuse join group:</string>
+    <string name="at_your_in_group">%s @ you in group chat</string>
+    <string name="emojicon_test_name">Test</string>
+    <string name="invite_join_group">Invite to join the group</string>
+    <string name="Are_refuse_with">Refusing</string>
+    <string name="Refuse_with_failure">Failed to refuse</string>
 </resources>

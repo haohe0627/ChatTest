@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.hyphenate.easeui.ui.EaseConversationListFragment;
 import com.tc.chattest.R;
 import com.tc.chattest.base.BaseActivity;
 import com.tc.chattest.customer.CustomerBtn;
@@ -25,6 +26,7 @@ public class MainActivity extends BaseActivity {
     CustomerBtn setting;
 
     private ChatListFragment chatListFragment;
+    private EaseConversationListFragment conversationListFragment;
     private FriendsFragment friendsFragment;
     private SettingFragment settingFragment;
 
@@ -33,6 +35,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void init() {
 
+        conversationListFragment = new EaseConversationListFragment();
         chatListFragment = new ChatListFragment();
         friendsFragment = new FriendsFragment();
         settingFragment = new SettingFragment();
