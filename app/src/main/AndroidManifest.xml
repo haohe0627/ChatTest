@@ -40,6 +40,8 @@
         </activity>
         <activity android:name=".ui.ActivityAddContact">
         </activity>
+        <activity android:name=".ui.ChatActivity">
+        </activity>
 
         <meta-data android:name="EASEMOB_APPKEY"  android:value="1132170630178073#chattest" />
         <!-- 声明SDK所需的service SDK核心功能-->

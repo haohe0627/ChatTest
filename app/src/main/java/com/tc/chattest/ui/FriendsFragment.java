@@ -3,10 +3,15 @@ package com.tc.chattest.ui;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 
+import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.ui.EaseContactListFragment;
 import com.hyphenate.easeui.widget.ContactItemView;
 import com.tc.chattest.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by haohe on 2017/7/4 0004.
@@ -15,6 +20,7 @@ import com.tc.chattest.R;
 public class FriendsFragment extends EaseContactListFragment {
 
     private ContactItemView applicationItem;
+    private static Map<String, EaseUser> contactList;
 
     @Override
     protected void initView() {
@@ -36,11 +42,38 @@ public class FriendsFragment extends EaseContactListFragment {
                 startActivity(new Intent(getActivity(), ActivityAddContact.class));
             }
         });
+
+        setContactsMap(contactList);
+
+    }
+
+    public static void setFriendsMap(Map<String, EaseUser> list){
+        contactList = new HashMap<>();
+        contactList.putAll(list);
+    }
+
+    public static void clearMap(){
+        if( contactList != null &&contactList.size()>0){
+            contactList.clear();
+        }
     }
 
     @Override
     protected void setUpView() {
         super.setUpView();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                EaseUser user = (EaseUser)listView.getItemAtPosition(position);
+                if (user != null) {
+                    String username = user.getUsername();
+                    // demo中直接进入聊天页面，实际一般是进入用户详情页
+                    startActivity(new Intent(getActivity(), ChatActivity.class).putExtra("userId", username));
+                }
+            }
+        });
     }
 
     protected class HeaderItemClickListener implements View.OnClickListener {
